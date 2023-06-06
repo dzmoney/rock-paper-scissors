@@ -14,13 +14,13 @@ function getComputerChoice() {
 }
 
 //output compChoice
-let computerSelection = getComputerChoice();
+// let computerSelection = getComputerChoice();
 
 //
 //
 //USER CHOICE
 function getUserChoice() {
-  let userInput = prompt("Type: rock, paper, or scissors");
+  // let userInput = prompt("Type: rock, paper, or scissors");
   //if input, output userSelection
   switch (userInput.toLowerCase()) {
     case "rock":
@@ -38,4 +38,43 @@ function getUserChoice() {
   }
 }
 
-let userSelection = getUserChoice();
+// let userSelection = getUserChoice();
+
+//
+//
+//PLAY THE GAME
+function playRound(computerSelection, userSelection) {
+  switch (true) {
+    case computerSelection === "rock" && userSelection === "scissors":
+      return "You lose! Rock beats Scissors";
+      break;
+    case computerSelection === "rock" && userSelection === "rock":
+      return "You tie!";
+      break;
+    case computerSelection === "rock" && userSelection === "paper":
+      return "You win! Paper beats Rock";
+      break;
+    case computerSelection === "scissors" && userSelection === "paper":
+      return "You lose! Scissors beats Paper";
+      break;
+    case computerSelection === "scissors" && userSelection === "scissors":
+      return "You tie!";
+      break;
+    case computerSelection === "scissors" && userSelection === "rock":
+      return "You win! Rock beats Scissors";
+      break;
+    case computerSelection === "paper" && userSelection === "rock":
+      return "You lose! Paper beats Rock";
+      break;
+    case computerSelection === "paper" && userSelection === "paper":
+      return "You tie!";
+      break;
+    case computerSelection === "paper" && userSelection === "scissors":
+      return "You win! Scissors beats Paper";
+      break;
+  }
+}
+
+const userSelection = "rock";
+const computerSelection = getComputerChoice();
+console.log(playRound(computerSelection, userSelection));
