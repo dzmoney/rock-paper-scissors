@@ -1,10 +1,19 @@
-//GAME WITH MULTIPLE ROUNDS
-//play 5 rounds
-function game() {
-  let userScore = 0;
-  let computerScore = 0;
+let userScore = 0;
+let computerScore = 0;
 
-  //play 5 rounds
+function keepScore(result) {
+  if (result && result.startsWith("You win!")) {
+    userScore++;
+  } else if (result && result.startsWith("You lose!")) {
+    computerScore++;
+  }
+
+  console.log(`You: ${userScore} \nComputer: ${computerScore}`);
+}
+//report winner at the end
+
+function game() {
+  //PLAY 5 ROUNDS
   for (let i = 0; i < 5; i++) {
     let userSelection = getUserChoice();
     let computerSelection = getComputerChoice();
@@ -13,24 +22,13 @@ function game() {
     let result = playRound(computerSelection, userSelection);
     console.log(result);
 
-    //keep score
-    function keepScore() {
-      if (result.startsWith("You win!")) {
-        userScore++;
-      } else if (result.startsWith("You lose!")) {
-        computerScore++;
-      }
-
-      console.log(`You: ${userScore} \nComputer: ${computerScore}`);
-    }
-    keepScore();
-    //report winner at the end
+    keepScore(result);
   }
 
   //
   //USER CHOICE
   function getUserChoice() {
-    let userInput = prompt("Type: rock, paper, or scissors");
+    let userInput = prompt("Choose: rock, paper, or scissors");
     //if input, output userSelection
     switch (userInput.toLowerCase()) {
       case "rock":
