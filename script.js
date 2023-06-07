@@ -70,35 +70,16 @@ function game() {
   //
   //PLAY THE GAME
   function playRound(computerSelection, userSelection) {
-    //switch case test truthiness of each case comparison
-    switch (true) {
-      case computerSelection === "rock" && userSelection === "scissors":
-        return "You lose! Rock beats Scissors";
-        break;
-      case computerSelection === "rock" && userSelection === "rock":
-        return "You tie!";
-        break;
-      case computerSelection === "rock" && userSelection === "paper":
-        return "You win! Paper beats Rock";
-        break;
-      case computerSelection === "scissors" && userSelection === "paper":
-        return "You lose! Scissors beats Paper";
-        break;
-      case computerSelection === "scissors" && userSelection === "scissors":
-        return "You tie!";
-        break;
-      case computerSelection === "scissors" && userSelection === "rock":
-        return "You win! Rock beats Scissors";
-        break;
-      case computerSelection === "paper" && userSelection === "rock":
-        return "You lose! Paper beats Rock";
-        break;
-      case computerSelection === "paper" && userSelection === "paper":
-        return "You tie!";
-        break;
-      case computerSelection === "paper" && userSelection === "scissors":
-        return "You win! Scissors beats Paper";
-        break;
+    if (computerSelection === userSelection) {
+      return "You tie!";
+    } else if (
+      (computerSelection === "rock" && userSelection === "scissors") ||
+      (computerSelection === "scissors" && userSelection === "paper") ||
+      (computerSelection === "paper" && userSelection === "rock")
+    ) {
+      return `You lose! ${computerSelection} beats ${userSelection}`;
+    } else {
+      return `You win! ${userSelection} beats ${computerSelection}`;
     }
   }
 }
