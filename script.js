@@ -10,6 +10,9 @@ function keepScore(result) {
 
   console.log(`You: ${userScore} \nComputer: ${computerScore}`);
 }
+//
+//
+//
 //report winner at the end
 
 function game() {
