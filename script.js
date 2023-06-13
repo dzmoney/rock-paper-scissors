@@ -18,18 +18,7 @@ function keepScore(result) {
 
 function game() {
   //PLAY 5 ROUNDS
-  // for (let i = 0; i < 5; i++)
-  function plchldRounds() {
-    let userSelection = getUserChoice();
-    let computerSelection = getComputerChoice();
-    console.log(`You chose ${userSelection}`);
-    console.log(`The computer chose ${computerSelection}`);
-    let result = playRound(computerSelection, userSelection);
-    console.log(result);
-
-    keepScore(result);
-  }
-  plchldRounds();
+  for (let i = 0; i < 5; i++) {}
 
   //
   //USER CHOICE
@@ -39,16 +28,16 @@ function game() {
     let btnScissors = document.querySelector("#btn-scissors");
 
     btnRock.addEventListener("click", () => {
-      playRound(computerSelection(), "rock");
-      return "rock";
+      userSelection = "rock";
+      playRound();
     });
     btnPaper.addEventListener("click", () => {
-      playRound(computerSelection(), "paper");
-      return "paper";
+      userSelection = "paper";
+      playRound();
     });
     btnScissors.addEventListener("click", () => {
-      playRound(computerSelection(), "scissors");
-      return "scissors";
+      userSelection = "scissors";
+      playRound();
     });
   }
 
@@ -71,19 +60,32 @@ function game() {
   //
   //
   //PLAY THE GAME
-  function playRound(computerSelection, userSelection) {
+  function playRound() {
+    let computerSelection = getComputerChoice();
+
+    console.log(`You chose ${userSelection}`);
+    console.log(`The computer chose ${computerSelection}`);
+
+    let result;
+
     if (computerSelection === userSelection) {
-      return "You tie!";
+      result = "You tie!";
     } else if (
       (computerSelection === "rock" && userSelection === "scissors") ||
       (computerSelection === "scissors" && userSelection === "paper") ||
       (computerSelection === "paper" && userSelection === "rock")
     ) {
-      return `You lose! ${computerSelection} beats ${userSelection}`;
+      result = `You lose! ${computerSelection} beats ${userSelection}`;
     } else {
-      return `You win! ${userSelection} beats ${computerSelection}`;
+      result = `You win! ${userSelection} beats ${computerSelection}`;
     }
+
+    keepScore(result);
   }
+
+  getUserChoice();
 }
 
-game();
+document.addEventListener("DOMContentLoaded", () => {
+  game();
+});
