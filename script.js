@@ -18,7 +18,8 @@ function keepScore(result) {
 
 function game() {
   //PLAY 5 ROUNDS
-  for (let i = 0; i < 5; i++) {
+  // for (let i = 0; i < 5; i++)
+  function plchldRounds() {
     let userSelection = getUserChoice();
     let computerSelection = getComputerChoice();
     console.log(`You chose ${userSelection}`);
@@ -28,6 +29,7 @@ function game() {
 
     keepScore(result);
   }
+  plchldRounds();
 
   //
   //USER CHOICE
