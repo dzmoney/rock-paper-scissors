@@ -10,23 +10,41 @@
     ></script>
     <script src="/script.js"></script>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap"
+      rel="stylesheet"
+    />
     <title>Rock, Paper, Scissors</title>
   </head>
   <body>
     <div class="container">
+      <h1>Rock - Paper - Scissors</h1>
+      <div class="scoreboard">
+        <div class="player-score">
+          <h2>Player</h2>
+          <p>0</p>
+        </div>
+        <div class="comp-score">
+          <h2>Computer</h2>
+          <p>0</p>
+        </div>
+      </div>
+      <h3>Choose Your Weapon!</h3>
       <div class="buttons">
         <button class="custom-btn btn-rock" id="btn-rock">
           <i
-            class="fa-solid fa-hand-back-fist fa-6x"
+            class="fa-solid fa-hand-back-fist fa-7x"
             style="color: #7971ea"
           ></i>
         </button>
         <button class="custom-btn btn-paper" id="btn-paper">
-          <i class="fa-regular fa-hand fa-6x" style="color: #7971ea"></i>
+          <i class="fa-regular fa-hand fa-7x" style="color: #7971ea"></i>
         </button>
         <button class="custom-btn btn-scissors" id="btn-scissors">
           <i
-            class="fa-regular fa-hand-scissors fa-6x"
+            class="fa-regular fa-hand-scissors fa-7x"
             style="color: #7971ea"
           ></i>
         </button>

@@ -1,16 +1,58 @@
 body {
   background: #eeeeee;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  color: #222831;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  font-size: 2.5rem;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.player-score,
+.comp-score {
+  padding: 0 40px;
+  margin: 0 20px;
+  border: 2px solid #7971ea;
+  border-radius: 8px;
+}
+
+.comp-score {
+  padding: 0 20px !important;
+}
+
+.player-score p,
+.comp-score p {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+h3 {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
 }
 
 .buttons {
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 40px;
 }
 
 .custom-btn {
-  padding: 20px 25px;
+  padding: 20px 55px;
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
