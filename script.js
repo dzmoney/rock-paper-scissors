@@ -34,22 +34,22 @@ function game() {
   //
   //USER CHOICE
   function getUserChoice() {
-    let userInput = "rock";
-    //if input, output userSelection
-    switch (userInput.toLowerCase()) {
-      case "rock":
-        return "rock";
-        break;
-      case "paper":
-        return "paper";
-        break;
-      case "scissors":
-        return "scissors";
-        break;
-      default:
-        alert("Invalid answer. Please choose rock, paper, or scissors.");
-        return null;
-    }
+    let btnRock = document.querySelector("#btn-rock");
+    let btnPaper = document.querySelector("#btn-paper");
+    let btnScissors = document.querySelector("#btn-scissors");
+
+    btnRock.addEventListener("click", () => {
+      playRound(computerSelection(), "rock");
+      return "rock";
+    });
+    btnPaper.addEventListener("click", () => {
+      playRound(computerSelection(), "paper");
+      return "paper";
+    });
+    btnScissors.addEventListener("click", () => {
+      playRound(computerSelection(), "scissors");
+      return "scissors";
+    });
   }
 
   //
