@@ -34,7 +34,7 @@ function game() {
   //
   //USER CHOICE
   function getUserChoice() {
-    let userInput = prompt("Choose: rock, paper, or scissors");
+    let userInput = "rock";
     //if input, output userSelection
     switch (userInput.toLowerCase()) {
       case "rock":
