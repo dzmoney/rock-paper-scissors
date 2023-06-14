@@ -1,9 +1,16 @@
+:root {
+  --bg: #eeeeee;
+  --purple: #7971ea;
+  --grey: #393e46;
+  --black: #222831;
+}
+
 body {
-  background: #eeeeee;
+  background: var(--bg);
   margin: 0;
   padding: 0;
   font-family: "Montserrat", sans-serif;
-  color: #222831;
+  color: var(--black);
 }
 
 h1 {
@@ -23,7 +30,7 @@ h1 {
 .comp-score {
   padding: 0 40px;
   margin: 0 20px;
-  border: 2px solid #7971ea;
+  border: 2px solid var(--purple);
   border-radius: 8px;
 }
 
@@ -44,7 +51,7 @@ h3 {
   padding-top: 50px;
 }
 
-.buttons {
+.options {
   display: flex;
   justify-content: center;
   align-items: center;
